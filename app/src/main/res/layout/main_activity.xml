@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="viewModel"
+            type="com.example.sibgauviews.viewModels.MainViewModel"/>
+    </data>
+
+    <GridLayout
+        tools:context=".MainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:rowCount="5">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0">
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@{viewModel.album[0].size + `-` + viewModel.album[0].cost}"
+                android:onClick="@{() -> viewModel.select(0)}"/>
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@{viewModel.album[1].size + `-` + viewModel.album[1].cost}"
+                android:onClick="@{() -> viewModel.select(1)}"/>
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@{viewModel.album[2].size + `-` + viewModel.album[2].cost}"
+                android:onClick="@{() -> viewModel.select(2)}"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:text="Количество" />
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:ems="10"
+            android:hint="фотографии"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:shadowColor="#000000"
+            android:text="@={viewModel.amount}"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:text="ok"
+            android:onClick="openCostActivity"/>
+
+    </GridLayout>
+</layout>
