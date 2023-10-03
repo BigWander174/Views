@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SibGAU.Views</string>
+    <string name="title_activity_price">PriceActivity</string>
 </resources>
