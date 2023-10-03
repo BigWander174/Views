@@ -22,7 +22,8 @@ class PriceActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val viewModel = ViewModelProvider(this)[PriceViewModel::class.java]
-        val binding : PriceActivityBinding = DataBindingUtil.setContentView(this, R.layout.main_activity)
+        val binding : PriceActivityBinding = DataBindingUtil.setContentView(this, R.layout.price_activity)
         binding.viewModel = viewModel
+        viewModel.setPrice(intent.getStringExtra("amount")!!, intent.getDoubleExtra("cost", 0.0))
     }
 }
