@@ -23,9 +23,13 @@ class MainActivity : ComponentActivity() {
         val viewModel = ViewModelProvider(this)[MainViewModel::class.java]
         val binding : MainActivityBinding = DataBindingUtil.setContentView(this, R.layout.main_activity)
         binding.viewModel = viewModel
-    }
 
-    fun openCostActivity()
-    {
+        binding.openPriceActivityButton.setOnClickListener()
+        {
+            val intent = Intent(this, PriceActivity::class.java)
+            intent.putExtra("amount", viewModel.amount)
+            intent.putExtra("cost", viewModel.selectedCost)
+            startActivity(intent)
+        }
     }
 }

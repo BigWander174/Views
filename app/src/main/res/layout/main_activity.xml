@@ -68,13 +68,13 @@
             android:text="@={viewModel.amount}"/>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/open_price_activity_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="4"
             android:layout_column="0"
             android:text="ok"
-            android:onClick="openCostActivity"/>
+            android:onClick="openPriceActivity"/>
 
     </GridLayout>
 </layout>
